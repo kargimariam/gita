@@ -1,0 +1,69 @@
+*{
+  padding: 0;
+  margin: 0;;
+}
+#banner{
+  background-image: url(https://images.immediate.co.uk/production/volatile/sites/3/2023/01/Minecraft-cross-platform-multiplayer-a744e65.jpg?quality=90&resize=980,654);
+  text-align: center;
+  padding: 160px 0;
+  background-size: cover;
+  color: white;
+}
+.inline{
+  display: flex;
+  gap:30px;
+  padding: 10px;
+  background-color:#333 ;
+  list-style-type: none;
+}
+ a {
+  color: white;
+  text-decoration: none;
+}
+#about{
+  text-align: center;
+  margin: 100px 0px;
+}
+h2{
+  margin-bottom: 60px;
+  text-align: center;
+}
+.flex{
+  display: flex;
+  gap:30px;
+  justify-content: space-around;
+}
+.about-item img {
+  width: 100%; 
+  height: auto; 
+  max-width: 300px; 
+  margin-bottom: 10px; /* Adds space between image and description */
+}
+.about-item p{
+    color: #333;
+    font-style:initial;
+    max-width: 300px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 10px auto;
+}
+input,
+textarea,
+button {
+  margin-bottom: 20px;
+  padding: 10px;
+}
+button {
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+header{
+  position: fixed;
+  width: 100%;
+}
+
