@@ -10,11 +10,9 @@ fetch(apiUrl)
     return response.json();
   })
   .then(data => {
-    // Handle the data from the response
-    console.log(data);
+   
 
     const productsList = document.getElementById("products-list");
-    const allProducts = document.getElementById("all_products")
     
 
     function filterProductsByCategory(products){
@@ -70,49 +68,6 @@ fetch(apiUrl)
 
         
     });
-    
-
-   
-    filterProductsByCategory(data.products).forEach(x =>{
-      
-        const productsBox = document.createElement("div")
-        productsBox.classList.add("products-box")
-
-        const productsImage = document.createElement("img")
-        productsImage.classList.add("products-image")
-        productsImage.setAttribute("src", x.thumbnail);
-        productsBox.appendChild(productsImage)
-
-        const productsTitle = document.createElement("h3")
-        productsTitle.classList.add("products-title")
-        productsTitle.textContent=x.title
-        productsBox.appendChild(productsTitle)
-
-        const ratingBox  = document.createElement("div")
-        ratingBox.classList.add("rating-box")
-
-        const fivestar = document.createElement("img")
-        fivestar.classList.add("fivestar")
-        fivestar.setAttribute("src","./Logos/5-star-icon.svg")
-        ratingBox.appendChild(fivestar)
-
-        const productStars = document.createElement("p")
-        productStars.classList.add("product-stars")
-        productStars.textContent = `${x.rating}/5`
-        ratingBox.appendChild(productStars)
-        productsBox.appendChild(ratingBox)
-
-        const productsPrice = document.createElement("p")
-        productsPrice.classList.add("products-price")
-        productsPrice.textContent = `$ ${x.price}`
-        productsBox.appendChild(productsPrice)
-
-      
-        allProducts.appendChild(productsBox)
-
-      document.write("sooo")
-    })
-
 
 
   })

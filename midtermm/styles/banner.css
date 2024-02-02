@@ -78,7 +78,13 @@
     padding: 42px 100px;
     justify-content: space-between;
 }
-
-
+.top_selling_title{
+    color: #000;
+    text-align: center;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
 
 

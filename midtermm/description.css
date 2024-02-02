@@ -1,0 +1,33 @@
+.description_box{
+    padding-top:100px ;
+    width: 1240px;
+    margin: auto;
+}
+.products_image{
+   width: 48%;
+}
+.fivestar{
+    width:90px;
+}
+.product-stars{
+    font-family: Satoshi;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19px;
+    text-align: left;
+
+}
+.text_box{
+    width:47%;
+}
+.rating-box{
+    display: flex;
+    gap:5%;
+    padding: 5px 0px 8px 10px;
+}
+
+@media (max-width: 1240px) {
+    .description_box{
+        width: 100%;
+    }
+}

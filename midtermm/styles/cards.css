@@ -1,3 +1,13 @@
+.container2{
+    padding: 80px 100px;
+}
+.products-list{
+    display: flex;
+    gap: 49px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 100px;
+}
 .products-image{
     width: 200px;
     height: 200px;
@@ -31,7 +41,7 @@
 .fivestar{
     width:90px;
 }
-.product-stars{
+.product_stars{
     font-family: Satoshi;
     font-size: 14px;
     font-weight: 400;
@@ -39,7 +49,7 @@
     text-align: left;
 
 }
-.rating-box{
+.rating_box{
     display: flex;
     gap:15px;
     padding: 5px 0px 8px 10px;
