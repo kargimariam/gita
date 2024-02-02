@@ -16,82 +16,97 @@ fetch(apiUrl)
     // Retrieve the cart from sessionStorage
     const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
 
-    const cartProductIds = cart.map(item => item.productid);
-
     const cartElements = document.getElementById("cart-elements");
 
-    data.products.forEach(x => {
-      // Check if the product ID exists in the cart
-      if (cartProductIds.includes(x.id)) {
-        const ellWrapper = document.createElement("div");
-        ellWrapper.classList.add("el-wrapper");
+    // Iterate over each item in the cart
+    cart.forEach(cartItem => {
+      const productId = cartItem.productid;
+      const quantity = cartItem.quantity;
 
-        const element = document.createElement("div");
-        element.classList.add("element");
+      // Find the product in the data
+      const product = data.products.find(x => x.id === productId);
 
-        const elImage = document.createElement("img");
-        elImage.classList.add("el-img");
-        elImage.setAttribute("src", x.thumbnail);
+      if (product) {
+        // Create elements for the product in the cart
+        for (let i = 0; i < quantity; i++) {
+          const ellWrapper = document.createElement("div");
+          ellWrapper.classList.add("el-wrapper");
 
-        const elBody = document.createElement("div");
-        elBody.classList.add("el-body");
+          const element = document.createElement("div");
+          element.classList.add("element");
 
-        const elName = document.createElement("h3");
-        elName.classList.add("el-name");
-        elName.textContent = x.title;
+          const elImage = document.createElement("img");
+          elImage.classList.add("el-img");
+          elImage.setAttribute("src", product.thumbnail);
 
-        const elPrice = document.createElement("h4");
-        elPrice.classList.add("el-price");
-        elPrice.textContent = `$ ${x.price}`;
+          const elBody = document.createElement("div");
+          elBody.classList.add("el-body");
 
-        elBody.appendChild(elName);
-        elBody.appendChild(elPrice);
+          const elName = document.createElement("h3");
+          elName.classList.add("el-name");
+          elName.textContent = product.title;
 
-        const delAdd = document.createElement("div");
-        delAdd.classList.add("del-add");
+          const elPrice = document.createElement("h4");
+          elPrice.classList.add("el-price");
+          elPrice.textContent = `$ ${product.price}`;
 
-        const binImg = document.createElement("img");
-        binImg.classList.add("bin-img");
-        binImg.setAttribute("src", "./Logos/bin.svg");
+          elBody.appendChild(elName);
+          elBody.appendChild(elPrice);
+
+          const delAdd = document.createElement("div");
+          delAdd.classList.add("del-add");
+
+          const binImg = document.createElement("img");
+          binImg.classList.add("bin-img");
+          binImg.setAttribute("src", "./Logos/bin.svg");
+
+          binImg.addEventListener('click', (event) => {
+            // Remove the product from the cart
+            const updatedCart = cart.filter(item => item.productid !== productId);
+            sessionStorage.setItem('cart', JSON.stringify(updatedCart));
+            // Remove the element from the DOM
+            event.target.closest('.el-wrapper').remove();
+          });
 
         const minusPlus = document.createElement("div");
-        minusPlus.classList.add("minus-plus");
-
-        const justImage = document.createElement("img");
-        justImage.setAttribute("src","./Logos/minussign.svg" );
-
-        const justP = document.createElement("p");
-        justP.textContent = "1";
-
-        const justImage1 = document.createElement("img");
-        justImage1.setAttribute("src","./Logos/plussign.svg" );
+        minusPlus.classList.add("minus-plus"); 
         
-        minusPlus.appendChild(justImage);
-        minusPlus.appendChild(justP);
-        minusPlus.appendChild(justImage1);
-
-        delAdd.appendChild(binImg);
-        delAdd.appendChild(minusPlus);
-
-        element.appendChild(elImage);
-        element.appendChild(elBody);
-        element.appendChild(delAdd);
-
-        ellWrapper.appendChild(element);
-
+        const justImage = document.createElement("img"); 
+        justImage.setAttribute("src","./Logos/minussign.svg" ); 
+        
+        const justP = document.createElement("p"); 
+        justP.textContent = "1"; 
+        
+        const justImage1 = document.createElement("img"); 
+        justImage1.setAttribute("src","./Logos/plussign.svg" ); 
+        
+        
+        minusPlus.appendChild(justImage); 
+        minusPlus.appendChild(justP); 
+        minusPlus.appendChild(justImage1); 
+        
+        delAdd.appendChild(binImg); 
+        delAdd.appendChild(minusPlus); 
+        
+        
+        element.appendChild(elImage); 
+        element.appendChild(elBody); 
+        element.appendChild(delAdd); 
+        
+        ellWrapper.appendChild(element); 
         cartElements.appendChild(ellWrapper);
+        }
       }
     });
 
     const toCheckout = document.getElementById("toCheckout");
-    toCheckout.addEventListener('click', (event) => {
-        sessionStorage.removeItem('cart'); 
-        cartElements.innerHTML = ""; 
-        window.location.href = "checkout.html";
+    toCheckout.addEventListener('click', () => {
+      sessionStorage.removeItem('cart');
+      cartElements.innerHTML = "";
+      window.location.href = "checkout.html";
     });
 
   })
   .catch(error => {
-    // Handle any errors that occurred during the fetch
     console.error('Custom error message:', error);
   });
