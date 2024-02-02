@@ -4,11 +4,12 @@
     /* position: fixed; */
     width: 100%;
 }
-.container{
+
+.nav-container{
     display: flex;
     justify-content: space-between;
     background: #FFF;
-    padding: 12px 100px;
+    padding: 24px 0;
 }
 .logo{
     display: flex;
