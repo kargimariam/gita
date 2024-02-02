@@ -29,6 +29,9 @@ fetch(apiUrl)
    
   
     filterProductsByCategory(data.products).forEach(x =>{
+        let newanchor = document.createElement("a")
+        newanchor.setAttribute("href", './description.html?id=' + x.id)
+        newanchor.classList.add("anchor")
       
         const productsBox = document.createElement("div")
         productsBox.classList.add("products-box")
@@ -62,8 +65,8 @@ fetch(apiUrl)
         productsPrice.textContent = `$ ${x.price}`
         productsBox.appendChild(productsPrice)
 
-      
-        allProducts.appendChild(productsBox)
+        newanchor.appendChild(productsBox)
+        allProducts.appendChild(newanchor)
 
     })
 

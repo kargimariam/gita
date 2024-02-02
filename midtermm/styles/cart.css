@@ -1,7 +1,6 @@
 * {
   box-sizing: border-box;
 }
-
 body button {
   cursor: pointer;
 }
@@ -38,7 +37,7 @@ body main .container .cart-body h1 {
 }
 body main .container .cart-body .cart-grid {
   width: 100%;
-  display: grid;
+  display: flex;
   grid-template-columns: 57.6% 40.7%;
   column-gap: 20px;
 }
@@ -60,6 +59,7 @@ body main .container .cart-body .cart-grid .cart-elements .el-wrapper .element {
 body main .container .cart-body .cart-grid .cart-elements .el-wrapper .element .el-img {
   border-radius: 8.66px;
   margin-right: 16px;
+  width: 172px;
 }
 body main .container .cart-body .cart-grid .cart-elements .el-wrapper .element .el-body {
   display: flex;

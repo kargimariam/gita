@@ -28,10 +28,13 @@
     font-size: 24px;
     font-weight: 600;
     line-height: 32px;
-    letter-spacing: 0em;
     text-align: left;
     padding: 0px 0px 10px 10px;
 
+}
+.anchor{
+    text-decoration: none;
+   color: black;
 }
 .products-box{
     background-color: rgba(230, 230, 230, 0.537);
@@ -41,7 +44,7 @@
 .fivestar{
     width:90px;
 }
-.product_stars{
+.product-stars{
     font-family: Satoshi;
     font-size: 14px;
     font-weight: 400;
@@ -49,7 +52,7 @@
     text-align: left;
 
 }
-.rating_box{
+.rating-box{
     display: flex;
     gap:15px;
     padding: 5px 0px 8px 10px;

@@ -11,7 +11,7 @@ fetch(apiUrl)
   })
   .then(data => {
    
-
+      console.log(data)
     const productsList = document.getElementById("products-list");
     
 
@@ -31,6 +31,11 @@ fetch(apiUrl)
         return filterProductsByCategory(products).filter(products => (products.rating > 4.9));
     }
     topProducts(data.products).forEach(x => {
+        let newanchor = document.createElement("a")
+        newanchor.setAttribute("href", './description.html?id=' + x.id)
+        newanchor.classList.add("anchor")
+
+
         const productsBox = document.createElement("div")
         productsBox.classList.add("products-box")
 
@@ -63,8 +68,10 @@ fetch(apiUrl)
         productsPrice.textContent = `$ ${x.price}`
         productsBox.appendChild(productsPrice)
 
-      
-        productsList.appendChild(productsBox)
+        
+
+        newanchor.appendChild(productsBox)
+        productsList.appendChild(newanchor)
 
         
     });

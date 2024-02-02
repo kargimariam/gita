@@ -22,7 +22,7 @@
                 <div class="navlist">
                     <ul class="navlist">
                         <li>
-                            Shop
+                            <a class="invisible_underline" href="./shop.html">Shop</a>
                         </li>
                         <li>
                             On Sale
@@ -40,7 +40,7 @@
                     <input type="text" placeholder="Search for products..." class="search_input">
                 </div>
                 <div class="icons">
-                    <img src="./Logos/checkout.svg" alt="checkout_icon" class="icon" />
+                    <a href="./checkout.html"><img src="./Logos/checkout.svg" alt="checkout_icon" class="icon" /></a>
                     <img src="./Logos/login.svg" alt="logos_icon" class="icon" />
                 </div>
             </div>
@@ -60,8 +60,8 @@
             <div class="cart-body">
                 <h1>YOUR CART</h1>
                 <div class="cart-grid">
-                    <div class="cg-el cart-elements">
-                        <div class="el-wrapper">
+                    <div class="cg-el cart-elements" id="cart-elements">
+                        <!-- <div class="el-wrapper">
                             <div class="element">
                                 <img class="el-img" src="./images/sarochka.png" alt="">
                                 <div class="el-body">
@@ -79,65 +79,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="el-wrapper">
-                            <div class="element">
-                                <img class="el-img" src="./images/sarochka.png" alt="">
-                                <div class="el-body">
-                                    <h3 class="el-name">Gradient Graphic T-shirt</h3>
-                                    <h4 class="el-size">Size: <span>Large</span></h4>
-                                    <h4 class="el-color">Color: <Span>White</Span></h4>
-                                    <p class="el-price">$145</p>
-                                </div>
-                                <div class="del-add">
-                                    <img class="bin-img" src="./Logos/bin.svg" alt="">
-                                    <div class="minus-plus">
-                                        <img src="./Logos/minussign.svg" alt="">
-                                        <p class="quantity">1</p>
-                                        <img src="./Logos/plussign.svg" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="el-wrapper">
-                            <div class="element">
-                                <img class="el-img" src="./images/sarochka.png" alt="">
-                                <div class="el-body">
-                                    <h3 class="el-name">Gradient Graphic T-shirt</h3>
-                                    <h4 class="el-size">Size: <span>Large</span></h4>
-                                    <h4 class="el-color">Color: <Span>White</Span></h4>
-                                    <p class="el-price">$145</p>
-                                </div>
-                                <div class="del-add">
-                                    <img class="bin-img" src="./Logos/bin.svg" alt="">
-                                    <div class="minus-plus">
-                                        <img src="./Logos/minussign.svg" alt="">
-                                        <p class="quantity">1</p>
-                                        <img src="./Logos/plussign.svg" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="el-wrapper">
-                            <div class="element">
-                                <img class="el-img" src="./images/sarochka.png" alt="">
-                                <div class="el-body">
-                                    <h3 class="el-name">Gradient Graphic T-shirt</h3>
-                                    <h4 class="el-size">Size: <span>Large</span></h4>
-                                    <h4 class="el-color">Color: <Span>White</Span></h4>
-                                    <p class="el-price">$145</p>
-                                </div>
-                                <div class="del-add">
-                                    <img class="bin-img" src="./Logos/bin.svg" alt="">
-                                    <div class="minus-plus">
-                                        <img src="./Logos/minussign.svg" alt="">
-                                        <p class="quantity">1</p>
-                                        <img src="./Logos/plussign.svg" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        </div> -->
+                       
                     <div class="cg-el order-summary">
                         <h2>Order Summary</h2>
                         <div class="stats">
@@ -147,10 +90,10 @@
                             </div>
                             <div class="stat dicount">
                                 <p class="title">
-                                    Discount(<span class="perc-value">-20%</span>)
+                                    Discount(<span class="perc-value">-0%</span>)
                                 </p>
                                 <p class="value dis-val">
-                                    -$113
+                                    -$0
                                 </p>
                             </div>
                             <div class="stat fee">
@@ -173,7 +116,7 @@
                                     Apply
                                 </button>
                             </div>
-                            <button class="to-checkout">
+                            <button class="to-checkout" id="toCheckout">
                                 Go to Checkout <img src="./Logos/arrowright.svg" alt="">
                             </button>
                         </div>
@@ -249,6 +192,6 @@
             </div>
         </div>
     </footer>
-
+    <script src="./cart.js"></script>
 </body>
 </html>

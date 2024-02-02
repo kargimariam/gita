@@ -4,7 +4,11 @@
     /* position: fixed; */
     width: 100%;
 }
-
+.container {
+    width: 1240px;
+    margin: auto;
+    max-width: 100%;
+  }
 .nav-container{
     display: flex;
     justify-content: space-between;
